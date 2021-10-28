@@ -3,10 +3,12 @@ import { Container, Col, Row, ListGroup } from 'react-bootstrap'
 import Loading from './Loading'
 import Error from './Error'
 import ReservationForm from './ReservationForm'
+import ReservationType from '../typings/ReservationType'
+
 
 const Reservations = () => {
 
-    const [reservations, setReservations] = useState([])
+    const [reservations, setReservations] = useState<ReservationType[]>([])
     const [isLoading, setIsLoading] = useState(true)
     const [isError, setIsError] = useState(false)
 

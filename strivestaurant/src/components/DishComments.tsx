@@ -3,7 +3,7 @@ import Dish from "../typings/Dish"
 
 
 interface DishCommentProps {
-    selectedPasta: Dish
+    selectedPasta: Dish | null
 }
 
 const DishComments = ({ selectedPasta }:DishCommentProps) => (
@@ -11,11 +11,11 @@ const DishComments = ({ selectedPasta }:DishCommentProps) => (
         <Row className="justify-content-center mt-3">
             <Col xs={12} md={6}>
                 <ListGroup>
-                    {/* {
+                    {
                         selectedPasta ? selectedPasta.comments.map(c => (
                             <ListGroup.Item key={c.id}>{c.comment}</ListGroup.Item>
                         )) : <p>Click on a dish to read its comments</p>
-                    } */}
+                    } 
                 </ListGroup>
             </Col>
         </Row>

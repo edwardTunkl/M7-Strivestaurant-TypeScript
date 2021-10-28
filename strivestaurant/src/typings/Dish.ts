@@ -1,5 +1,5 @@
 
-interface Comments {
+interface Comment {
       id: number
       rating: number
       comment: string
@@ -17,6 +17,6 @@ interface Dish {
   label: string
   price: string
   description: string
-  comments: Comments[]
+  comments: Comment[]
 }
 export default Dish

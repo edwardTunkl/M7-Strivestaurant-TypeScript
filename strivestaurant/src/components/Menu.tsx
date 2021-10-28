@@ -14,7 +14,7 @@ const Menu = () => (
                         {dish.description}
                     </p>
                     <h4>
-                        {/* <Badge variant ="warning">{dish.price}</Badge> */}
+                        <Badge>{dish.price}</Badge>
                     </h4>
                 </Col>
             </Row>))}

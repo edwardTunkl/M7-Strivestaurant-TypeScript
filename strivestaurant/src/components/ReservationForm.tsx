@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, FormEvent, ChangeEvent } from 'react'
 import { Form, Button } from 'react-bootstrap'
 
 const ReservationForm = () => {
@@ -11,7 +11,7 @@ const ReservationForm = () => {
         specialRequests: ''
     })
 
-    const inputChange = (e) => {
+    const inputChange = (e: ChangeEvent<HTMLInputElement>) => {
 
         let id = e.target.id
 
@@ -24,7 +24,7 @@ const ReservationForm = () => {
     useEffect(() => {
     }, [reservation])
 
-    const submitReservation = async (e) => {
+    const submitReservation = async (e: FormEvent) => {
         e.preventDefault()
 
         try {
@@ -64,7 +64,7 @@ const ReservationForm = () => {
                         placeholder="Enter name"
                         value={reservation.name}
                         id="name"
-                        onChange={e => inputChange(e)}
+                        onChange={inputChange}
                     />
                 </Form.Group>
                 <Form.Group>
@@ -74,7 +74,7 @@ const ReservationForm = () => {
                         placeholder="Enter phone"
                         id="phone"
                         value={reservation.phone}
-                        onChange={e => inputChange(e)}
+                        onChange={inputChange}
                     />
                 </Form.Group>
                 <Form.Group>
@@ -83,7 +83,7 @@ const ReservationForm = () => {
                         as="select"
                         value={reservation.numberOfPersons}
                         id="numberOfPersons"
-                        onChange={e => inputChange(e)}
+                        onChange={inputChange}
                     >
                         <option>1</option>
                         <option>2</option>
@@ -99,7 +99,7 @@ const ReservationForm = () => {
                         label="Do you smoke?"
                         checked={reservation.smoking}
                         id="smoking"
-                        onChange={e => inputChange(e)}
+                        onChange={inputChange}
                     />
                 </Form.Group>
                 <Form.Group>
@@ -108,7 +108,7 @@ const ReservationForm = () => {
                         type="datetime-local"
                         value={reservation.dateTime}
                         id="dateTime"
-                        onChange={e => inputChange(e)}
+                        onChange={inputChange}
                     />
                 </Form.Group>
                 <Form.Group>
